@@ -12,8 +12,8 @@
 				"ms-python.python",
 				"charliermarsh.ruff"
 			],
-			"settings": { 
-                "python.defaultInterpreterPath": "${containerEnv:UV_PROJECT_ENVIRONMENT}/bin/python" 
+			"settings": {
+                "python.defaultInterpreterPath": "${containerEnv:UV_PROJECT_ENVIRONMENT}/bin/python"
             },
 			"[python]": {
 				"editor.formatOnSave": true,
@@ -27,9 +27,9 @@
 		}
 	},
 	"containerEnv": {
-    	"UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv" 
+    	"UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
   	},
-	"mounts": [	
+	"mounts": [
 		{"type": "volume", "source": "home-dir-${devcontainerId}", "target": "/home/vscode"}
 	],
 	"postCreateCommand": "uv sync --all-extras",

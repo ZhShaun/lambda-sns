@@ -2,10 +2,10 @@
 name = "lambda-sns"
 version = "0.1.0"
 authors = [
-  {name = "Shaun", email = "elevhant0619@gmail.com"},
+    {name = "Shaun", email = "elevhant0619@gmail.com"},
 ]
 maintainers = [
-  {name = "Shaun", email = "elevhant0619@gmail.com"}
+    {name = "Shaun", email = "elevhant0619@gmail.com"}
 ]
 
 
@@ -18,6 +18,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "boto3-stubs>=1.40.50",
+    "pre-commit>=4.3.0",
     "pyright>=1.1.406",
     "ruff>=0.14.0",
 ]
@@ -28,16 +29,21 @@ test = [
 
 
 [tool.ruff]
-# bc whole home dir is volume mount 
+# bc whole home dir is volume mount
 cache-dir = "~/.cache/ruff"
 
 show-fixes = true
 
 [tool.ruff.lint]
 
-# allow rules to add from __future__ import annotations in cases 
+# allow rules to add from __future__ import annotations in cases
 # where this would simplify a fix or enable a new diagnostic.
 future-annotations = true
 
 select = ["ALL"]
 
+ignore = [
+    "D203",   # Conflicts with D211 (Docstrings)
+    "D213",   # Conflicts with D212 (Docstrings)
+    "COM812", # Conflicts with the formatter
+]
