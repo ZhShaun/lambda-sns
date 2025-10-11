@@ -1,0 +1,43 @@
+[project]
+name = "lambda-sns"
+version = "0.1.0"
+authors = [
+  {name = "Shaun", email = "elevhant0619@gmail.com"},
+]
+maintainers = [
+  {name = "Shaun", email = "elevhant0619@gmail.com"}
+]
+
+
+
+requires-python = ">= 3.12"
+dependencies = [
+    "aws-lambda-powertools[aws-sdk]>=3.4.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "boto3-stubs>=1.40.50",
+    "pyright>=1.1.406",
+    "ruff>=0.14.0",
+]
+test = [
+    "moto[all]>=5.1.14",
+    "pytest>=8.3.5",
+]
+
+
+[tool.ruff]
+# bc whole home dir is volume mount 
+cache-dir = "~/.cache/ruff"
+
+show-fixes = true
+
+[tool.ruff.lint]
+
+# allow rules to add from __future__ import annotations in cases 
+# where this would simplify a fix or enable a new diagnostic.
+future-annotations = true
+
+select = ["ALL"]
+
