@@ -214,6 +214,3 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-
-# config for pre-frommit
-.pre-commit-config.yaml
