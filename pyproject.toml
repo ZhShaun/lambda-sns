@@ -8,25 +8,37 @@ maintainers = [
     {name = "Shaun", email = "elevhant0619@gmail.com"}
 ]
 
-
-
 requires-python = ">= 3.12"
+
 dependencies = [
     "aws-lambda-powertools[aws-sdk]>=3.4.1",
 ]
 
 [project.optional-dependencies]
-dev = [
-    "boto3-stubs>=1.40.50",
+tools = [
     "pre-commit>=4.3.0",
-    "pyright>=1.1.406",
-    "ruff>=0.14.0",
-]
-test = [
-    "moto[all]>=5.1.14",
-    "pytest>=8.3.5",
 ]
 
+[dependency-groups]
+dev = [
+    {include-group = "lint"},
+    {include-group = "type-check"},
+    {include-group = "test"}
+]
+lint = [
+    "ruff>=0.14.0",
+]
+type-check = [
+    "boto3-stubs>=1.40.50",
+    "pyright>=1.1.406",
+]
+test = [
+    "pytest>=8.3.5",
+    "moto[all]>=5.1.14",
+]
+
+[tool.uv]
+default-groups = "all"
 
 [tool.ruff]
 # bc whole home dir is volume mount
@@ -47,6 +59,3 @@ ignore = [
     "D213",   # Conflicts with D212 (Docstrings)
     "COM812", # Conflicts with the formatter
 ]
-
-[tool.pyright]
-typeCheckingMode = "strict"
