@@ -10,21 +10,15 @@
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
-				"charliermarsh.ruff",
-				"SanjulaGanepola.github-local-actions"
+				"charliermarsh.ruff"
 			],
 			"settings": {
-                "python.defaultInterpreterPath": "${containerEnv:UV_PROJECT_ENVIRONMENT}/bin/python"
+                "python.defaultInterpreterPath": "${containerEnv:UV_PROJECT_ENVIRONMENT}/bin/python",
+				"Python.analysis.typeCheckingMode": "strict"
             },
 			"[python]": {
-				"editor.formatOnSave": true,
-				"editor.codeActionsOnSave": {
-					"source.fixAll": "explicit",
-					"source.organizeImports": "explicit"
-				},
 				"editor.defaultFormatter": "charliermarsh.ruff"
-			},
-			"Python.analysis.typeCheckingMode": "strict"
+			}
 		}
 	},
 	"containerEnv": {
