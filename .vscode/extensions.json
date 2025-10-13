@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "SanjulaGanepola.github-local-actions"
+        "SanjulaGanepola.github-local-actions",
+        "GitHub.vscode-github-actions"
     ]
 }
