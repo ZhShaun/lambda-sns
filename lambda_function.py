@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 logger = Logger(service="lambda-sns")
 
 
-def lambda_handler(_: EventBridgeEvent, __: LambdaContext) -> json:
+def lambda_handler(_: EventBridgeEvent, __: LambdaContext) -> str:
     """Say Hello World."""
     context = {"message": "Hello World"}
     logger.info("CloudWatch logs group: %s", context.get("message"))
