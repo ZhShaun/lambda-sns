@@ -1,0 +1,23 @@
+name: Python setup
+
+runs:
+  using: "composite"
+
+  steps:
+
+
+    - name: Set up Node.js for local action workalone
+      uses: actions/setup-node@v6
+      with:
+        node-version: 22
+
+    - name: Set up uv
+      uses: astral-sh/setup-uv@v7.1
+      with:
+        version: "0.9.5"
+        python-version: 3.13
+        activate-environment: "true"
+        enable-cache: true
+        prune-cache: false
+        cache-python: "true"
+        cache-dependency-glob: "**/pyproject.toml"

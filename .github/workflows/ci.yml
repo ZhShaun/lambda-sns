@@ -10,16 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-      - name: Set up Node.js for local action workalone
-        uses: actions/setup-node@v6
-        with:
-          node-version: 22
-      - name: Set up uv
-        uses: astral-sh/setup-uv@v7.1
-        with:
-          python-version: 3.13
-          enable-cache: true
-          activate-environment: "true"
+      - uses: ./.github/actions/setup-python
 
       - name: Install the project
         run: uv sync --locked --all-extras --dev
