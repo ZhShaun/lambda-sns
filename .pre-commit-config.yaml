@@ -9,6 +9,7 @@ repos:
     - id: end-of-file-fixer
     - id: check-yaml
     - id: check-added-large-files
+      exclude: \.yarn/releases/yarn-4\.10\.3\.cjs$
 - repo: https://github.com/astral-sh/ruff-pre-commit
   # Ruff version.
   rev: f9351c924055bf6c7b4a4670237d3ce141e9f57c  # frozen: v0.14.0
