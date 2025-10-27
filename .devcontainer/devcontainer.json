@@ -3,6 +3,11 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -21,6 +26,7 @@
   "containerEnv": {
     "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
   },
+  "remoteEnv": { "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}" },
   "mounts": [
     {
       "type": "volume",
