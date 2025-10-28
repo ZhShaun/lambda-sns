@@ -1,0 +1,39 @@
+name: CI for TS CDK Project
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+            working-directory: ./cdk-infra
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - uses: ./.github/actions/setup-node
+
+      - name: Type check with tsc
+        run: yarn tsc --noEmit
+
+      - name: Run linter and formater (biome)
+        run: yarn check-all
+
+      - name: Run unit tests
+        run: yarn test  # e.g., "test": "jest" – tests your CDK constructs and logic, and snapshot
+
+      - name: CDK Synth (generate templates)
+        run: yarn cdk synth
+        env:
+          AWS_DEFAULT_REGION: ap-northeast-1 # Optional: Set if needed for context
+
+      - name: Upload synth artifacts (optional)
+        uses: actions/upload-artifact@v5
+        with:
+          name: cdk-out
+          path: cdk.out
