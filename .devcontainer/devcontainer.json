@@ -5,7 +5,8 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-    "ghcr.io/devcontainers/features/node:1": {}
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/aws-cli:1.1.2": {}
   },
   "customizations": {
     "vscode": {
@@ -40,7 +41,6 @@
       "target": "/home/vscode"
     }
   ],
-  "onCreateCommand": "corepack enable",
-  "postCreateCommand": "uv sync --all-extras && cd cdk-infra && yarn install",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
   "remoteUser": "vscode"
 }

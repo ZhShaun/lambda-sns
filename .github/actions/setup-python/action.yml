@@ -9,7 +9,7 @@ runs:
     - name: Set up uv
       uses: astral-sh/setup-uv@v7.1
       with:
-        version: "0.9.5"
+        version: "0.9.8"
         python-version: 3.13
         activate-environment: "true"
         enable-cache: true
