@@ -5,11 +5,6 @@ runs:
 
   steps:
 
-    - name: Set up Node.js for local action workalone
-      uses: actions/setup-node@v6
-      with:
-        node-version: 22
-
     - name: Set up uv
       uses: astral-sh/setup-uv@v7.1
       with:

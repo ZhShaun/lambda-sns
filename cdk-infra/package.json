@@ -7,8 +7,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "lint-write": "exec biome lint --write .",
-    "format-write": "exec biome format --write .",
+    "lint-write": "biome lint --write .",
+    "format-write": "biome format --write .",
     "check-all": "biome check .",
     "cdk": "cdk"
   },

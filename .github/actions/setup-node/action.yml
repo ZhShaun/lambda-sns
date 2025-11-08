@@ -11,8 +11,7 @@ runs:
         cache: 'yarn'
         cache-dependency-path: '**/yarn.lock'
 
-
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: yarn install --immutable
       working-directory: ./cdk-infra
       shell: bash

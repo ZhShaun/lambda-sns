@@ -25,15 +25,9 @@ jobs:
         run: yarn check-all
 
       - name: Run unit tests
-        run: yarn test  # e.g., "test": "jest" – tests your CDK constructs and logic, and snapshot
+        run: yarn test
 
       - name: CDK Synth (generate templates)
         run: yarn cdk synth
         env:
-          AWS_DEFAULT_REGION: ap-northeast-1 # Optional: Set if needed for context
-
-      - name: Upload synth artifacts (optional)
-        uses: actions/upload-artifact@v5
-        with:
-          name: cdk-out
-          path: cdk.out
+          AWS_DEFAULT_REGION: ap-northeast-1
