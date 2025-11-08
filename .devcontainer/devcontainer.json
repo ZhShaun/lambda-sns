@@ -30,7 +30,9 @@
   "containerEnv": {
     "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
   },
-  "remoteEnv": { "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}" },
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
   "mounts": [
     {
       "type": "volume",
@@ -38,8 +40,7 @@
       "target": "/home/vscode"
     }
   ],
+  "onCreateCommand": "corepack enable",
   "postCreateCommand": "uv sync --all-extras && cd cdk-infra && yarn install",
-
   "remoteUser": "vscode"
-
 }
